@@ -1,0 +1,433 @@
+/* Freelancer Profile Editor CSS */
+
+.editor-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding-bottom: 100px;
+}
+
+.editor-header-bar {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 30px 0;
+  margin-bottom: 30px;
+}
+
+.editor-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.editor-header-bar h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.editor-header-bar p {
+  color: #64748b;
+  font-size: 15px;
+}
+
+.btn-view-live {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-view-live:hover {
+  background: #2563eb;
+  color: white;
+}
+
+.editor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.editor-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.editor-card h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.card-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Tag Selection Grid */
+.tag-selector-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tag-toggle-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag-toggle-btn:hover {
+  background: #e2e8f0;
+}
+
+.tag-toggle-btn.selected {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.tag-toggle-btn.fw-toggle.selected {
+  background: #059669;
+  border-color: #059669;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+}
+
+.add-custom-row {
+  display: flex;
+  gap: 10px;
+  max-width: 500px;
+}
+
+.add-custom-row input {
+  flex: 1;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: 14px;
+}
+
+.btn-add-tag {
+  background: #334155;
+  color: white;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-add-tag:hover {
+  background: #0f172a;
+}
+
+.selected-tags-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  min-height: 38px;
+}
+
+.skill-removable-pill {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-removable-pill button {
+  background: none;
+  border: none;
+  color: #dc2626;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Services Checkbox Grid */
+.services-checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.service-check-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  transition: all 0.2s ease;
+}
+
+.service-check-card:hover {
+  background: #f1f5f9;
+}
+
+.service-check-card.checked {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+/* Subform for Edu/Exp */
+.entry-subform {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.entry-subform h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.btn-outline-small {
+  background: white;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.entries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.entry-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.entry-company {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.entry-meta {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.entry-desc {
+  font-size: 13px;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.btn-delete-entry {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Sticky Submit Bar */
+.editor-submit-bar {
+  position: sticky;
+  bottom: 20px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 50;
+}
+
+.btn-save-large {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white !important;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  transition: all 0.2s ease;
+}
+
+.btn-save-large:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-2px);
+}
+
+/* Project Showcase in Editor */
+.add-project-form {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.current-projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-editor-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.p-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.p-header h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.btn-delete-proj {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.p-desc {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.p-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+@media (max-width: 768px) {
+  .form-grid-2,
+  .form-grid-3,
+  .services-checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,201 @@
+.navbar {
+  height: 70px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #2563eb;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.navbar-logo span {
+  color: #7c3aed;
+}
+
+.navbar-logo:hover {
+  opacity: 0.9;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 22px;
+  flex: 1;
+  margin-left: 40px;
+  align-items: center;
+}
+
+.nav-link {
+  color: #475569;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.05);
+}
+
+.nav-link.active {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  font-weight: 700;
+}
+
+.navbar-auth {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px 4px 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+}
+
+.nav-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.nav-user-avatar.client-avatar {
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+}
+
+.nav-user-avatar.freelancer-avatar {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+}
+
+.nav-user-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.nav-user-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.nav-user-role {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-user-role.role-client {
+  color: #0284c7;
+}
+
+.nav-user-role.role-freelancer {
+  color: #7c3aed;
+}
+
+.nav-btn-logout {
+  background: white;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn-logout:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.nav-btn-text {
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-btn-text:hover {
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.nav-btn-primary {
+  background: #2563eb;
+  color: white !important;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+@media (max-width: 900px) {
+  .navbar-container {
+    padding: 0 3%;
+  }
+
+  .navbar-links {
+    gap: 10px;
+    margin-left: 15px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+
+  .nav-user-info {
+    display: none;
+  }
+}

@@ -1,0 +1,341 @@
+/* Hire Talent Page Styles */
+
+.hire-talent-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding-bottom: 80px;
+}
+
+.hire-banner {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #7c3aed 100%) !important;
+}
+
+.hire-search-form {
+  display: flex;
+  gap: 10px;
+  max-width: 680px;
+  margin: 0 auto;
+  background: white;
+  padding: 6px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hire-search-form input {
+  flex: 1;
+  border: none;
+  padding: 12px 18px;
+  font-size: 15px;
+  outline: none;
+  border-radius: 8px;
+  color: #1e293b;
+}
+
+.hire-search-btn {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hire-search-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+.hire-talent-container {
+  max-width: 1300px;
+  margin: -25px auto 0;
+  padding: 0 20px;
+}
+
+/* Skills Filter Pills */
+.skill-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+  background: white;
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.skill-pill {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid transparent;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.skill-pill:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.skill-pill.active {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* Freelancers Feed */
+.freelancers-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.freelancers-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 24px;
+}
+
+.freelancer-resume-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.freelancer-resume-card:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.1);
+  transform: translateY(-3px);
+}
+
+.freelancer-card-header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.freelancer-avatar-badge {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar-initials {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.avatar-img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  background: #22c55e;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.freelancer-main-meta {
+  flex: 1;
+}
+
+.freelancer-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.freelancer-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 4px;
+}
+
+.freelancer-location {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.freelancer-rate-box {
+  text-align: right;
+  background: #f8fafc;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.rate-amount {
+  display: block;
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.rate-label {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.freelancer-bio-snippet {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.meta-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.card-languages-section,
+.card-skills-section {
+  margin-bottom: 12px;
+}
+
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lang-tag {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #bfdbfe;
+}
+
+.skill-tag {
+  background: #f1f5f9;
+  color: #334155;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+}
+
+.freelancer-card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.freelancer-stats-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.chip {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.card-cta-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn-outline-profile {
+  background: white;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-outline-profile:hover {
+  background: #eff6ff;
+}
+
+.btn-hire-action {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white !important;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-hire-action:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .freelancers-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-cta-buttons {
+    grid-template-columns: 1fr;
+  }
+}
