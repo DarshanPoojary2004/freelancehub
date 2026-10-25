@@ -1,0 +1,35 @@
+/**
+ * layout-fixes.css
+ * Overrides page-level min-height:100vh so that footer always stays at the
+ * bottom without content "escaping" below it.
+ * .main-content (in App.jsx) already has flex:1 so each page just needs
+ * to fill that column — no manual 100vh required.
+ */
+
+/* ── All page root containers ─────────────────────────────────────────── */
+.find-work-page,
+.hire-talent-page,
+.freelancer-profile-page,
+.editor-page,
+.dashboard-page {
+  min-height: unset;
+  flex: 1;
+}
+
+/* ── Login / Register centering fix ──────────────────────────────────── */
+/* .login-page already changed to flex:1 in App.css */
+
+/* ── Profile Editor: change sticky save bar to a normal bottom bar ───── */
+.editor-submit-bar {
+  position: relative !important;
+  bottom: unset !important;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* ── Prevent footer links from causing jarring hash-scroll jumps ─────── */
+footer a[href^="#"] {
+  cursor: default;
+  pointer-events: none;
+  color: inherit;
+}
