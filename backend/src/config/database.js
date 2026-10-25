@@ -1,6 +1,7 @@
 /**
  * Database Configuration
  * PostgreSQL connection setup
+ * Supports both DATABASE_URL (Neon/Render) and individual env vars (local)
  */
 
 import pg from 'pg';
@@ -15,23 +16,28 @@ dotenv.config({ path: path.resolve(__dirname, '..', '..', '.env') });
 
 const { Pool } = pg;
 
-const DB_NAME = process.env.DB_NAME || 'freelancehub';
-const DB_HOST = process.env.DB_HOST || 'localhost';
-const DB_PORT = Number(process.env.DB_PORT) || 5432;
-const DB_USER = process.env.DB_USER || 'postgres';
-const DB_PASSWORD = process.env.DB_PASSWORD || '';
+const isProduction = process.env.NODE_ENV === 'production';
 
-const pool = new Pool({
-  host: DB_HOST,
-  port: DB_PORT,
-  database: DB_NAME,
-  user: DB_USER,
-  password: DB_PASSWORD,
-  max: 20,
-  idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 5000,
-  ssl: false,
-});
+// Neon / Render use DATABASE_URL; local dev uses individual vars
+const pool = process.env.DATABASE_URL
+  ? new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+      max: 10,
+      idleTimeoutMillis: 30000,
+      connectionTimeoutMillis: 10000,
+    })
+  : new Pool({
+      host: process.env.DB_HOST || 'localhost',
+      port: Number(process.env.DB_PORT) || 5432,
+      database: process.env.DB_NAME || 'freelancehub',
+      user: process.env.DB_USER || 'postgres',
+      password: process.env.DB_PASSWORD || '',
+      max: 20,
+      idleTimeoutMillis: 30000,
+      connectionTimeoutMillis: 5000,
+      ssl: false,
+    });
 
 pool.on('connect', () => {
   console.log('✓ Database connection established');
@@ -46,12 +52,19 @@ export const query = (text, params) => pool.query(text, params);
 export const getClient = async () => pool.connect();
 
 export const ensureDatabaseExists = async () => {
+  // When using DATABASE_URL (Neon), the database already exists — skip creation
+  if (process.env.DATABASE_URL) {
+    console.log('✓ Using DATABASE_URL — skipping database creation check');
+    return;
+  }
+
+  const DB_NAME = process.env.DB_NAME || 'freelancehub';
   const adminPool = new Pool({
-    host: DB_HOST,
-    port: DB_PORT,
+    host: process.env.DB_HOST || 'localhost',
+    port: Number(process.env.DB_PORT) || 5432,
     database: 'postgres',
-    user: DB_USER,
-    password: DB_PASSWORD,
+    user: process.env.DB_USER || 'postgres',
+    password: process.env.DB_PASSWORD || '',
     max: 5,
     connectionTimeoutMillis: 5000,
     ssl: false,
@@ -84,3 +97,4 @@ export const testDatabaseConnection = async () => {
 };
 
 export default pool;
+
